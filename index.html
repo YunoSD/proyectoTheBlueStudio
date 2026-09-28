@@ -11,6 +11,9 @@
 	<title>Index</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/elementosStyle.css">
+	<link rel="icon" type="image/png" href="img/casaBosque.png">
+	<script defer src="js/header.js"></script>
+	<script defer src="js/casas.js"></script>
 </head>
 
 <body>
@@ -29,24 +32,36 @@
 		</nav>
 	</header>
 
-	<section class="nombresCasas pagina">
-		<h2>Horizonte</h2>
-		<img src="img/casa1.png" alt="Casa Horizonte">
-	</section>
-
-	<section class="nombresCasas pagina">
-		<h2>Elemental</h2>
-		<img src="img/casa2.png" alt="Casa Elemental">
-	</section>
-
-	<section class="nombresCasas pagina">
-		<h2>Siliente</h2>
-		<img src="img/casa3.png" alt="Casa Siliente">
-	</section>
-
-	<section class="nombresCasas pagina">
-		<h2>Tangente</h2>
-		<img src="img/casa4.png" alt="Casa Tangente">
+	<section class="casasScroll">
+		<div class="casasCarrusel">
+	
+			<div class="carruselTarjeta">
+				<div class="carruselSlide activo" id="slideHorizonte">
+					<img src="img/casa1.png" alt="Casa Horizonte">
+					<h2>Horizonte</h2>
+				</div>
+				<div class="carruselSlide" id="slideElemental">
+					<img src="img/casa2.png" alt="Casa Elemental">
+					<h2>Elemental</h2>
+				</div>
+				<div class="carruselSlide" id="slideSiliente">
+					<img src="img/casa3.png" alt="Casa Siliente">
+					<h2>Siliente</h2>
+				</div>
+				<div class="carruselSlide" id="slideTangente">
+					<img src="img/casa4.png" alt="Casa Tangente">
+					<h2>Tangente</h2>
+				</div>
+			</div>
+	
+			<div class="carruselDots">
+				<span class="dot activo"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+			</div>
+	
+		</div>
 	</section>
 
 	<section class="nombresCasas pagina">

@@ -4,8 +4,7 @@
 }
 
 .bloqueNoticias div {
-	height: 32vw;
-	min-height: 300px;
+	min-height: max(32vw, 300px);
 }
 
 .noticiaImagen img {

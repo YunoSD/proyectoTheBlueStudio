@@ -80,6 +80,105 @@
 	color: #333;
 }
 
+.casasScroll {
+	height: 400dvh;
+	position: relative;
+}
+
+.casasCarrusel {
+	position: sticky;
+	top: 0;
+	height: 100dvh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	padding: 40px 20px;
+}
+
+.carruselTarjeta {
+	position: relative;
+	width: min(1100px, 92vw);
+	aspect-ratio: 4 / 3;
+	max-height: calc(100dvh - 120px);
+	border-radius: 32px;
+	overflow: hidden;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.carruselSlide {
+	position: absolute;
+	inset: 0;
+	opacity: 0;
+	transition: opacity 0.6s ease;
+}
+
+.carruselSlide.activo {
+	opacity: 1;
+}
+
+.carruselSlide img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.carruselSlide::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 45%);
+}
+
+.carruselSlide h2 {
+	position: absolute;
+	z-index: 1;
+	left: 40px;
+	right: 40px;
+	bottom: 35px;
+	color: #fff;
+	font-size: clamp(32px, 5vw, 64px);
+	font-weight: bold;
+}
+
+.carruselDots {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.carruselDots .dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: #c7c7c7;
+	transition: background 0.3s;
+}
+
+.carruselDots .dot.activo {
+	background: var(--azul);
+}
+
+@media (max-width: 700px) {
+
+	.carruselTarjeta {
+		aspect-ratio: 3 / 4;
+		border-radius: 22px;
+	}
+
+	.carruselSlide h2 {
+		left: 24px;
+		right: 24px;
+		bottom: 24px;
+	}
+
+	.casasCarrusel {
+		padding: 20px 12px;
+		gap: 12px;
+	}
+}
+
 @media (max-width: 700px) {
 
 	.nombresCasas h2,
