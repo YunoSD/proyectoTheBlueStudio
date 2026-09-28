@@ -1,6 +1,7 @@
 .nombresCasas {
-	display: flex;
-	justify-content: center;
+	position: relative;
+	display: block;
+	margin-top: clamp(40px, 8vw, 120px);
 }
 
 .nombresCasas h2 {
@@ -13,12 +14,11 @@
 }
 
 .nombresCasas img {
-	position: absolute;
-	z-index: 2;
-	bottom: 0;
-	left: 0;
+	position: relative;
 	width: 100%;
-	height: auto;
+	aspect-ratio: 16 / 9;
+	max-height: 100dvh;
+	object-fit: cover;
 	display: block;
 }
 
