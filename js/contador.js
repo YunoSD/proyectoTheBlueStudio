@@ -4,7 +4,7 @@ let numero = 0;
 const objetivo = 9922;
 
 function pintar() {
-	contador.textContent = Math.round(numero).toLocaleString("en-US") + " kg";
+	contador.textContent = Math.round(numero) + " kg";
 }
 
 const subida = setInterval(() => {
