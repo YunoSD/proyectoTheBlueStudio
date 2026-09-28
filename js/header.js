@@ -7,15 +7,11 @@
 
 	function ajustar() {
 		const alto = header.offsetHeight;
-
-		// el contenido empieza justo debajo del header
-		document.body.style.paddingTop = alto + "px";
+        document.body.style.paddingTop = alto + "px";
 
 		if (bloqueCasas) {
 			bloqueCasas.style.marginTop = -alto + "px";
 		}
-
-		// header visible: carrusel debajo / header oculto: carrusel centrado
 		if (carrusel) {
 			carrusel.style.paddingTop = header.classList.contains("hide") ? "20px" : (alto + 20) + "px";
 		}
@@ -46,6 +42,5 @@
 	});
 
 	window.addEventListener("resize", ajustar);
-	window.addEventListener("load", ajustar);
 	ajustar();
 })();
