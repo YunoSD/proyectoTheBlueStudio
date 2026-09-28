@@ -1,20 +1,10 @@
-.nombresCasas {
+.citaProyecto {
 	position: relative;
-	display: block;
 	margin-top: clamp(40px, 8vw, 120px);
+	line-height: 0;
 }
 
-.nombresCasas h2 {
-	position: absolute;
-	top: 80px;
-	color: var(--azul);
-	font-size: clamp(70px, 12vw, 180px);
-	font-weight: bold;
-	white-space: nowrap;
-}
-
-.nombresCasas img {
-	position: relative;
+.citaProyecto img {
 	width: 100%;
 	aspect-ratio: 16 / 9;
 	max-height: 100dvh;
@@ -22,19 +12,31 @@
 	display: block;
 }
 
-.textoLateral {
+.citaProyecto::after {
+	content: "";
 	position: absolute;
-	z-index: 3;
-	top: 50%;
-	left: clamp(20px, 3vw, 50px);
-	color: #fff;
-	font-size: clamp(20px, 2.5vw, 40px);
-	font-style: italic;
-	font-weight: bold;
-	line-height: 1;
+	inset: 0;
+	z-index: 2;
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 60%);
+	pointer-events: none;
 }
 
-.esencia-scroll {
+.citaTexto {
+	position: absolute;
+	z-index: 3;
+	bottom: clamp(20px, 4vw, 60px);
+	left: clamp(20px, 3vw, 50px);
+	right: clamp(20px, 3vw, 50px);
+	max-width: 70%;
+	color: #fff;
+	font-size: clamp(16px, 2.5vw, 40px);
+	font-style: italic;
+	font-weight: bold;
+	line-height: 1.15;
+	text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.esenciaScroll {
 	height: 200dvh;
 	position: relative;
 }
@@ -49,9 +51,11 @@
 .esencia h2 {
 	position: absolute;
 	z-index: 1;
-	top: 80px;
-	left: 50%;
-	transform: translateX(-50%);
+	top: 100px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: fit-content;
 	color: var(--azul);
 	font-size: clamp(70px, 12vw, 180px);
 }
@@ -68,12 +72,16 @@
 .textoEsencia {
 	position: absolute;
 	z-index: 3;
-	top: 50%;
+	top: 0;
+	bottom: 0;
 	right: 8%;
-	width: 35%;
-	transform: translateY(-50%) translateX(150px);
-	font-size: clamp(25px, 3vw, 45px);
+	margin: auto 0;
+	height: fit-content;
+	width: 32%;
+	opacity: 0;
+	font-size: clamp(22px, 2.6vw, 40px);
 	line-height: 1.25;
+	text-align: left;
 }
 
 .textoEsencia p {
@@ -81,10 +89,9 @@
 }
 
 .casasScroll {
-	margin-top: calc(90px * -1);
 	height: 400dvh;
 	position: relative;
-	margin-top: calc(80px * -1);
+	margin-top: -90px;
 }
 
 .casasCarrusel {
@@ -95,24 +102,18 @@
 	align-items: center;
 	justify-content: center;
 	gap: 20px;
-	padding: 90px 20px 20px;
+	padding: 20px;
 	transition: padding-top 0.5s;
-	padding: 90px 20px 20px;
 }
 
 .carruselTarjeta {
 	position: relative;
-	max-height: calc(100dvh - 90px - 40px);
 	width: min(1100px, 92vw);
 	aspect-ratio: 4 / 3;
-	max-height: calc(100dvh - 120px);
+	max-height: 100%;
 	border-radius: 32px;
 	overflow: hidden;
-	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-}
-
-.header-oculto .casasCarrusel {
-	padding-top: 20px;
+	box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
 }
 
 .carruselSlide {
@@ -186,19 +187,10 @@
 		padding: 20px 12px;
 		gap: 12px;
 	}
-}
 
-@media (max-width: 700px) {
-
-	.nombresCasas h2,
 	.esencia h2 {
 		top: 50px;
 		font-size: clamp(55px, 14vw, 100px);
-	}
-
-	.textoLateral {
-		top: 55%;
-		font-size: clamp(18px, 5vw, 28px);
 	}
 
 	.esencia img {
@@ -209,7 +201,7 @@
 	.textoEsencia {
 		right: 5%;
 		width: 40%;
-		transform: translateY(-50%);
 		font-size: clamp(18px, 4vw, 28px);
 	}
+
 }

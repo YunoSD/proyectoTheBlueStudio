@@ -29,12 +29,12 @@
 	line-height: 1.5;
 }
 
-.esencia {
+.resumenEsencia {
 	padding: 100px 20px;
 	text-align: center;
 }
 
-.intro {
+.introResumen {
 	max-width: 500px;
 	margin: 0 auto 50px;
 	font-size: 18px;
@@ -79,13 +79,4 @@
 
 .desglose li :last-child {
 	font-weight: bold;
-}
-
-
-@media (max-width: 500px) {
-
-	.comparacion {
-		flex-direction: column;
-		gap: 30px;
-	}
 }
