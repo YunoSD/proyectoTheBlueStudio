@@ -10,6 +10,7 @@
 }
 
 body {
+	padding-top:90px;
 	font-family: system-ui;
 	overflow-x: hidden;
 	background: var(--fondo);
@@ -25,8 +26,10 @@ section {
 }
 
 header {
-	position: sticky;
+	position: fixed;
 	top: 0;
+	left: 0;
+	right: 0;
 	height: 90px;
 	padding: 0 55px;
 	display: grid;
@@ -35,6 +38,12 @@ header {
 	background: transparent;
 	transition: transform 0.5s;
 	z-index: 10;
+}
+
+header.conFondo {
+	background: rgba(249, 249, 249, 0.40);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
 }
 
 .logo {
@@ -62,7 +71,7 @@ nav ul {
 }
 
 nav a {
-	color: #787878;
+	color: #666666;
 	font-size: 15px;
 	font-weight: 400;
 	text-decoration: none;

@@ -1,20 +1,51 @@
-let ultimoScroll = 0;
-const header = document.querySelector("header");
- 
+(function () {
+	const header = document.querySelector("header");
+	const carrusel = document.querySelector(".casasCarrusel");
+	const bloqueCasas = document.querySelector(".casasScroll");
 
-window.addEventListener("scroll", () => {
-    const scrollActual = window.scrollY;
+	let ultimoScroll = 0;
 
-    if(scrollActual <= 0){
-        header.classList.remove("hide");
-        return;
-    }
+	function ajustar() {
+		const alto = header.offsetHeight;
 
-    if(scrollActual > ultimoScroll){
-        header.classList.add("hide");
-    }else{
-        header.classList.remove("hide");
-    }
+		// el contenido empieza justo debajo del header
+		document.body.style.paddingTop = alto + "px";
 
-    ultimoScroll = scrollActual;
-})
+		if (bloqueCasas) {
+			bloqueCasas.style.marginTop = -alto + "px";
+		}
+
+		// header visible: carrusel debajo / header oculto: carrusel centrado
+		if (carrusel) {
+			carrusel.style.paddingTop = header.classList.contains("hide") ? "20px" : (alto + 20) + "px";
+		}
+	}
+
+	window.addEventListener("scroll", () => {
+		const scrollActual = window.scrollY;
+
+		if (scrollActual <= 0) {
+			header.classList.remove("hide", "conFondo");
+			ajustar();
+			ultimoScroll = 0;
+			return;
+		}
+
+		header.classList.add("conFondo");
+
+		if (Math.abs(scrollActual - ultimoScroll) < 5) return;
+
+		if (scrollActual > ultimoScroll) {
+			header.classList.add("hide");
+		} else {
+			header.classList.remove("hide");
+		}
+
+		ajustar();
+		ultimoScroll = scrollActual;
+	});
+
+	window.addEventListener("resize", ajustar);
+	window.addEventListener("load", ajustar);
+	ajustar();
+})();

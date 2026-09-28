@@ -81,8 +81,10 @@
 }
 
 .casasScroll {
+	margin-top: calc(90px * -1);
 	height: 400dvh;
 	position: relative;
+	margin-top: calc(80px * -1);
 }
 
 .casasCarrusel {
@@ -93,17 +95,24 @@
 	align-items: center;
 	justify-content: center;
 	gap: 20px;
-	padding: 40px 20px;
+	padding: 90px 20px 20px;
+	transition: padding-top 0.5s;
+	padding: 90px 20px 20px;
 }
 
 .carruselTarjeta {
 	position: relative;
+	max-height: calc(100dvh - 90px - 40px);
 	width: min(1100px, 92vw);
 	aspect-ratio: 4 / 3;
 	max-height: calc(100dvh - 120px);
 	border-radius: 32px;
 	overflow: hidden;
 	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.header-oculto .casasCarrusel {
+	padding-top: 20px;
 }
 
 .carruselSlide {
