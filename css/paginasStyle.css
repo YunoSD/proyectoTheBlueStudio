@@ -88,9 +88,12 @@
 		grid-template-columns: 1fr;
 	}
 
-	.bloqueMedia > div {
-		height: auto;
-		min-height: 0;
+	.bloqueMedia div { 
+		min-height: 0; 
+	}
+
+	.bloqueTexto:nth-child(3) {
+		order: 1;
 	}
 
 	.bloqueImagen {

@@ -45,14 +45,10 @@ header {
 	-webkit-backdrop-filter: blur(10px);
 }
 
-.logo {
-	font-size: 40px;
-}
 
 .logo a {
 	color: #000;
 	font-size: 40px;
-	font-weight: bold;
 	text-decoration: none;
 	white-space: nowrap;
 }
@@ -72,7 +68,6 @@ nav ul {
 nav a {
 	color: #666;
 	font-size: 15px;
-	font-weight: 400;
 	text-decoration: none;
 	transition: color 0.2s;
 }
@@ -142,7 +137,6 @@ footer {
 		gap: 20px;
 	}
 
-	.logo,
 	.logo a {
 		font-size: 32px;
 	}

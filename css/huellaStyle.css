@@ -21,6 +21,11 @@
 	font-size: clamp(50px, 8vw, 90px);
 	font-weight: bold;
 	font-variant-numeric: tabular-nums;
+	transition: color 0.4s;
+}
+
+.sube {
+	color: var(--azul);
 }
 
 .parrafoHuella {
@@ -41,11 +46,11 @@
 	line-height: 1.5;
 }
 
-.cifras {
+.cifrasEsencia {
 	margin-bottom: 60px;
 }
 
-.cifras p {
+.cifrasEsencia p {
 	margin-bottom: 15px;
 	color: var(--azul);
 	font-size: clamp(22px, 3vw, 32px);
