@@ -182,6 +182,10 @@
 		gap: 12px;
 	}
 
+	.esenciaScroll {
+		height: 130dvh;
+	}
+
 	.esencia h2 {
 	top: 40px;
 	font-size: clamp(55px, 14vw, 100px);

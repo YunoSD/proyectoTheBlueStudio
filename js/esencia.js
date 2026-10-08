@@ -9,13 +9,16 @@ function animar() {
 	let progreso = -rect.top / distancia;
 	progreso = Math.max(0, Math.min(1, progreso));
 
+	let aparicion;
+
 	if (window.innerWidth > 800) {
-	casa.style.transform = `translateX(${-30 * progreso}%)`;
+		casa.style.transform = `translateX(${-30 * progreso}%)`;
+		aparicion = (progreso - 0.25) / 0.5;
 	} else {
 		casa.style.transform = "none";
+		aparicion = (window.innerHeight - rect.top) / window.innerHeight;
 	}
 
-	let aparicion = (progreso - 0.25) / 0.5;
 	aparicion = Math.max(0, Math.min(1, aparicion));
 
 	texto.style.opacity = aparicion;
