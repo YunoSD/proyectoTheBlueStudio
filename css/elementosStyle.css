@@ -55,6 +55,8 @@
 	text-align: center;
 	color: var(--azul);
 	font-size: clamp(70px, 12vw, 180px);
+	top: 12dvh;
+	font-size: min(12vw, 20dvh);
 }
 
 .esencia img {
@@ -66,6 +68,7 @@
 	max-height: 85%;
 	object-fit: contain;
 	object-position: bottom;
+	max-height: 72%;
 }
 
 .textoEsencia {
@@ -77,6 +80,7 @@
 	opacity: 0;
 	font-size: clamp(22px, 2.6vw, 40px);
 	line-height: 1.25;
+	top: 45%;
 }
 
 .textoEsencia p {
@@ -186,23 +190,44 @@
 		height: 130dvh;
 	}
 
+	.esencia {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+		padding-top: 40px;
+	}
+
+	.esencia h2,
+	.esencia img,
+	.textoEsencia {
+		position: static;
+	}
+
 	.esencia h2 {
-	top: 40px;
-	font-size: clamp(55px, 14vw, 100px);
-	}	
+		font-size: min(14vw, 15dvh, 100px);
+	}
 
 	.esencia img {
-	left: 0;
-	width: 100%;
-	max-height: 60%;
+		width: 90%;
+		max-height: none;
+		flex: 1;
+		min-height: 0;
 	}
 
 	.textoEsencia {
-		top: 30%;
-		left: 8%;
-		right: 8%;
 		width: auto;
+		padding: 0 8%;
 		text-align: center;
-		font-size: clamp(20px, 5vw, 30px);
+		font-size: min(5vw, 4dvh, 30px);
 	}
+}
+
+@media (max-width: 500px) {
+
+	.esencia img {
+		width: 100%;
+		object-fit: cover;
+	}
+
 }
