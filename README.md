@@ -1,11 +1,13 @@
 # The Blue Studio
 
-Página web de un estudio de arquitectura desarrollada con HTML, CSS y JavaScript.
+Página web de un estudio de arquitectura desarrollada con HTML, CSS y JavaScript, sin librerías.
+
+> **Importante sobre Netlify:** la cuenta de Netlify se quedó sin créditos. El sitio sigue en línea en [elestudioazul.netlify.app](https://elestudioazul.netlify.app), pero los despliegues a producción están pausados, así que el enlace puede mostrar una versión anterior a la entregada. Para ver la versión final, abrir `index.html` de la carpeta entregada en cualquier navegador.
 
 ## Páginas maquetadas
 
-* **Inicio (`index.html`)**: presentación de los proyectos actuales que son Horizonte, Elemental, Siliente y Tangente, además del header y footer.
-* **Huella de Carbono (`huellaDeCarbono.html`)**: información sobre la sostenibilidad que lleva la empresa, materiales y el proyecto Esencia, el cual es el mas sustentable que se ha creado.
+* **Inicio (`index.html`)**: presentación de los proyectos actuales, que son Horizonte, Elemental, Siliente y Tangente, además del header y footer.
+* **Huella de Carbono (`huellaDeCarbono.html`)**: información sobre la sostenibilidad de la empresa, los materiales y el proyecto Esencia, el más sustentable que se ha creado.
 * **Noticias (`noticias.html`)**: sección de noticias y proyectos.
 * **Nosotros (`nosotros.html`)**: información del estudio y sección de cifras destacadas.
 
@@ -14,13 +16,13 @@ Página web de un estudio de arquitectura desarrollada con HTML, CSS y JavaScrip
 * Header con navegación.
 * Footer con links (no funcionales) a redes sociales, información legal e información de privacidad.
 * Secciones de proyectos con imágenes y títulos.
-* Bloques de noticias mediante el uso de Grid.
+* Bloques de noticias mediante el uso de Grid. En celular alternan imagen y texto.
 * Sección de cifras.
-* Diseño responsive para adaptar la página a diferentes tamaños de pantalla.
+* Diseño responsive para adaptar la página a diferentes tamaños de pantalla. Los cambios principales de diseño ocurren en 800px, 700px y 500px de ancho.
 
 ## Interactividad (JavaScript)
 
-Todas estas interacciones reaccionan al scroll o al tiempo, sin necesidad de clics. Cada script se ejecuta solo si encuentra en la página el elemento que necesita, así que un mismo archivo (`header.js`) funciona en las cuatro páginas.
+Todas estas interacciones reaccionan al scroll o al tiempo, sin necesidad de clics. Cada página carga solo los scripts que necesita. `header.js` se usa en las cuatro páginas y revisa si existe el carrusel antes de ajustarlo, porque el carrusel solo está en Inicio.
 
 ### Header inteligente (`js/header.js`)
 
@@ -41,24 +43,36 @@ Todas estas interacciones reaccionan al scroll o al tiempo, sin necesidad de cli
 
 **Dónde:** Solo en Huella de Carbono.
 
-**Qué hace:** dentro de una sección fija en pantalla (`position: sticky`), el scroll mueve la imagen de la casa hacia un lado y hace aparecer el texto desde el lado contrario.
+**Qué hace:**
+* **En computadora:** dentro de una sección fija en pantalla (`position: sticky`), el scroll mueve la imagen de la casa hacia la izquierda y hace aparecer el texto a la derecha, subiendo desde abajo.
+* **En celular (800px o menos):** el título, el texto y la casa se acomodan en columna. La casa no se mueve, para que no se corte, y el texto aparece mientras la sección entra a la pantalla.
 
 ### Contador animado (`js/contador.js`)
 
 **Dónde:** Solo en Huella de Carbono.
 
 **Qué hace:** el número de kilos de materiales reciclados no aparece fijo, sino que:
-1. Sube desde 0 hasta el valor actual con una animación que desacelera al acercarse al final. Importante que esta funcion podría funcionar jalando los datos de una api funcional, por lo que para este proyecto solo es representativo.
-2. Una vez llegando al límite fijado, cada pocos segundos suma una pequeña cantidad, simulando que los datos se van actualizando.
+1. Sube desde 0 hasta 9,922 kg con una animación que desacelera al acercarse al final. Esta función podría tomar los datos de una API real; en este proyecto el número solo es representativo.
+2. Una vez que llega al límite fijado, cada 3 segundos suma una pequeña cantidad y el número se pinta de azul por un momento, simulando que los datos se van actualizando.
 
-## Pendiente / por confirmar
+El número se muestra con coma de miles (por ejemplo, 9,922 kg).
 
-* De los bloques pendientes solo fue en la seccion de casas, no era responsivo y se rompía en ciertos puntos. Agregando el carrusel vertical se solucionó.
+## Pendiente 
+
+* El único bloque pendiente era la sección de casas en Inicio: no era responsiva y se rompía en ciertos puntos. Se solucionó agregando el carrusel vertical.
+* La sección de Casa Esencia se veía mal en celular y en laptops con pantallas bajitas. 
 
 ## Cambios
 
 * Se agregaron apartados de información en las páginas Huella de Carbono y Nosotros.
 * Se añadió interactividad con JavaScript: header que se esconde al hacer scroll, carrusel de proyectos controlado por scroll, animación de la sección Esencia y contador animado de materiales reciclados.
+* **Revisión final:**
+  * Casa Esencia: en celular ya no queda un hueco en blanco ni se mueve la página de lado, y en laptops bajitas el título y el texto ya no se enciman.
+  * Se recortó la franja transparente de `casaEsencia.png`, que hacía ver la casa corrida a la izquierda.
+  * El contador muestra el número con coma y el destello azul en cada aumento.
+  * Noticias alterna imagen y texto en celular.
+  * Se quitaron reglas de CSS repetidas o sin efecto. No se usa ningún `!important`.
+
 
 ## Navegación
 
